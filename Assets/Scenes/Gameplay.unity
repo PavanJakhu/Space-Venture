@@ -183,7 +183,7 @@ GameObject:
   - 114: {fileID: 579368230}
   m_Layer: 0
   m_Name: Starfield 2
-  m_TagString: Untagged
+  m_TagString: Starfield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1065e59f2cb31441805499193494bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 7
 --- !u!212 &579368231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1429810597
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2544480887033e343aba0217fffa2081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1080,7 +1081,7 @@ GameObject:
   - 114: {fileID: 2135023329}
   m_Layer: 0
   m_Name: Starfield 1
-  m_TagString: Untagged
+  m_TagString: Starfield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1107,7 +1108,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1429810597
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2544480887033e343aba0217fffa2081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1134,3 +1135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1065e59f2cb31441805499193494bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 7

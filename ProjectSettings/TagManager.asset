@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Power Up
+  - Planet
+  - Starfield
   layers:
   - Default
   - TransparentFX
@@ -40,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1429810597
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

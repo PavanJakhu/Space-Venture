@@ -22,7 +22,7 @@ public class ShootBullet : MonoBehaviour
         {
             if (elapsedTime >= rateOfFire)
             {
-                Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity);
+                Instantiate(bulletPrefab.gameObject, new Vector3(transform.position.x, transform.position.y, -0.1f), Quaternion.identity);
                 elapsedTime = 0.0f;
             }
         }

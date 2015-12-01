@@ -5,10 +5,12 @@ public class ScrollingBackground : MonoBehaviour
 {
     private float bottomOfScreen;
     private float heightOfSprite;
-
+    public float speed;
+    private GameObject[] planets;
     // Use this for initialization
     void Start()
     {
+        planets = GameObject.FindGameObjectsWithTag("Planet");
         bottomOfScreen = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 0.0f)).y;
         heightOfSprite = GetComponent<SpriteRenderer>().bounds.extents.y;
     }
@@ -19,8 +21,10 @@ public class ScrollingBackground : MonoBehaviour
         if (transform.position.y + heightOfSprite <= bottomOfScreen)
         {
             transform.position = new Vector3(0.0f, 50.0f, 0.0f);
+            
         }
 
-        transform.Translate(new Vector3(0.0f, -1.0f) * 10.0f * Time.deltaTime);
+        transform.Translate(new Vector3(0.0f, -1.0f) * speed * Time.deltaTime);
+        
     }
 }

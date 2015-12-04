@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 11419130, guid: be6eeb148520b164b8583543c7f63c35, type: 2}
-  rateOfFire: .200000003
+  rateOfFire: .5
 --- !u!212 &21298500
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rateOfFire
-      value: .200000003
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic

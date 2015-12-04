@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2b5815b2e35eb4dbaa9ee3cc2d24f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supportShipPrefab: {fileID: 445132, guid: 9e23184e3e0e71449a59884287e6811c, type: 2}
+  supportShipPrefab: {fileID: 445132, guid: 4c2714bbc3e932742a8d111155abf423, type: 2}
   numberOfSupportShips: 2
   maxNumberOfSupportShips: 3
   distanceFromShip: 2

@@ -36,13 +36,22 @@ public class BulletMovement : MonoBehaviour
         if (coll.gameObject.tag == "Enemy")
         {
             scoreKeeper.AddScore(10);
-            int ranNum = Random.Range(1, 10);
-            if (ranNum == 1)
+
+            EnemyHealth healthScript = coll.gameObject.GetComponent<EnemyHealth>();
+            healthScript.DecreaseHealth(1.0f);
+            if (!healthScript.IsAlive())
             {
-                Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+                int ranNum = Random.Range(1, 10);
+                if (ranNum == 1)
+                {
+                    Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+                }
+
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+                Destroy(coll.gameObject);
             }
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(coll.gameObject);
+            
             Destroy(gameObject);
         }
     }

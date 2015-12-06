@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpawnNewEnemies : MonoBehaviour
 {
-    enum SpawnSide { TOP, BOTTOM, RIGHT, LEFT };
+    public enum SpawnSide { TOP, BOTTOM, RIGHT, LEFT };
 
-    public GameObject enemyShip;
+    public GameObject[] enemyShips;
     public float spawnEnemyAt;
 
     private float enemySpawnElapsedTime;
@@ -26,24 +27,36 @@ public class SpawnNewEnemies : MonoBehaviour
         if (enemySpawnElapsedTime >= spawnEnemyAt)
         {
             Vector2 spawnPos = Vector2.zero;
-            switch ((SpawnSide)Random.Range(0, 4))
+            SpawnSide sideSpawned = (SpawnSide)Random.Range(0, 4);
+            switch (sideSpawned)
             {
                 case SpawnSide.TOP:
                     spawnPos = new Vector2(Random.Range(minBounds.x, maxBounds.x), minBounds.y - 1.0f);
+                    sideSpawned = SpawnSide.TOP;
                     break;
                 case SpawnSide.BOTTOM:
                     spawnPos = new Vector2(Random.Range(minBounds.x, maxBounds.x), maxBounds.y + 1.0f);
+                    sideSpawned = SpawnSide.BOTTOM;
                     break;
                 case SpawnSide.RIGHT:
                     spawnPos = new Vector2(maxBounds.x + 1.0f, Random.Range(minBounds.y, maxBounds.y));
+                    sideSpawned = SpawnSide.RIGHT;
                     break;
                 case SpawnSide.LEFT:
                     spawnPos = new Vector2(minBounds.x - 1.0f, Random.Range(minBounds.y, maxBounds.y));
+                    sideSpawned = SpawnSide.LEFT;
                     break;
                 default:
                     break;
             }
-            Instantiate(enemyShip, spawnPos, Quaternion.identity);
+            int randomShip = Random.Range(0, enemyShips.Length);
+            GameObject spawnedShip = Instantiate(enemyShips[randomShip], spawnPos, Quaternion.identity) as GameObject;
+
+            if (spawnedShip.GetComponent<ShootFromAfar>() != null)
+            {
+                spawnedShip.GetComponent<ShootFromAfar>().SetSpawnSide(sideSpawned);
+            }
+
             enemySpawnElapsedTime = 0.0f;
         }
     }

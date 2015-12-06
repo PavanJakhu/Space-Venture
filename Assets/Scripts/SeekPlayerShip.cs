@@ -23,7 +23,7 @@ public class SeekPlayerShip : MonoBehaviour
         if (playerShip)
         {
             float angle = Mathf.Atan2(playerShip.transform.position.y - transform.position.y, playerShip.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, angle - 90.0f));
+            transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, angle + 90.0f));
             transform.position = Vector2.MoveTowards(transform.position, playerShip.position, Time.deltaTime * seekMovement);
         }
     }

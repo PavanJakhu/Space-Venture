@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2b5815b2e35eb4dbaa9ee3cc2d24f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supportShipPrefab: {fileID: 445132, guid: 4c2714bbc3e932742a8d111155abf423, type: 2}
+  supportShipPrefab: {fileID: 445132, guid: 9e23184e3e0e71449a59884287e6811c, type: 2}
   numberOfSupportShips: 2
   maxNumberOfSupportShips: 3
   distanceFromShip: 2
@@ -368,7 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2e733b2d513d444a4275658ddea441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyShip: {fileID: 131898, guid: 0ad3ffdb6a5bdc146a59591f971341b8, type: 2}
+  enemyShips:
+  - {fileID: 131898, guid: 0ad3ffdb6a5bdc146a59591f971341b8, type: 2}
+  - {fileID: 116128, guid: 183e79fcfc706174a8f3336a356138fc, type: 2}
   spawnEnemyAt: 1
 --- !u!1001 &721968364
 Prefab:

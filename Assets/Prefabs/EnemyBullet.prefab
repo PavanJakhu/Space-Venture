@@ -1,48 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &135384
+--- !u!1 &149154
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 411016}
-  - 33: {fileID: 3324344}
-  - 23: {fileID: 2300146}
-  - 61: {fileID: 6146220}
-  - 50: {fileID: 5094684}
-  - 114: {fileID: 11419130}
-  m_Layer: 9
-  m_Name: Bullet
+  - 4: {fileID: 490588}
+  - 33: {fileID: 3387118}
+  - 23: {fileID: 2380734}
+  - 61: {fileID: 6139758}
+  - 50: {fileID: 5080290}
+  - 114: {fileID: 11451564}
+  m_Layer: 10
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &411016
+--- !u!4 &490588
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: .16160892, y: .837500513, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2300146
+--- !u!23 &2380734
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: dcd8d35943f80cb46be6e7fe319a53cd, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -56,20 +56,20 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3324344
+--- !u!33 &3387118
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &5094684
+--- !u!50 &5080290
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
@@ -79,12 +79,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6146220
+--- !u!61 &6139758
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -92,12 +92,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &11419130
+--- !u!114 &11451564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135384}
+  m_GameObject: {fileID: 149154}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89312da43b633a34bbd0b1a5ef85c8cc, type: 3}
@@ -114,42 +114,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: dcd8d35943f80cb46be6e7fe319a53cd, type: 2}
-    - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: movementSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: powerUpPrefab
-      value: 
-      objectReference: {fileID: 443456, guid: 87b30d1c657c2d74a8a245968dab56c8, type: 2}
-    - target: {fileID: 0}
-      propertyPath: explosionPrefab
-      value: 
-      objectReference: {fileID: 495570, guid: fe94bfe9d5ca3564ab8dba5d74525110, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsKinematic
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 135384}
+  m_RootGameObject: {fileID: 149154}
   m_IsPrefabParent: 1

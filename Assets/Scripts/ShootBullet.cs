@@ -22,7 +22,8 @@ public class ShootBullet : MonoBehaviour
         {
             if (elapsedTime >= rateOfFire)
             {
-                Instantiate(bulletPrefab.gameObject, new Vector3(transform.position.x, transform.position.y, -0.1f), Quaternion.identity);
+                GameObject bullet = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity) as GameObject;
+                bullet.GetComponent<BulletMovement>().SetTarget(CrossPlatformInputManager.mousePosition);
                 elapsedTime = 0.0f;
             }
         }

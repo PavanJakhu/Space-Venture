@@ -1,96 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190674
+--- !u!1 &131898
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 445132}
-  - 212: {fileID: 21298500}
-  - 61: {fileID: 6193988}
-  - 50: {fileID: 5066758}
-  - 114: {fileID: 11449714}
-  - 114: {fileID: 11406158}
-  m_Layer: 8
-  m_Name: SupportShip
-  m_TagString: Untagged
+  - 4: {fileID: 421512}
+  - 212: {fileID: 21209128}
+  - 61: {fileID: 6111606}
+  - 114: {fileID: 11415432}
+  - 114: {fileID: 11425838}
+  m_Layer: 11
+  m_Name: EnemyFighter
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &445132
+--- !u!4 &421512
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
+  m_GameObject: {fileID: 131898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5066758
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &6193988
+--- !u!61 &6111606
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
+  m_GameObject: {fileID: 131898}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .0075378418, y: .0019375484}
   serializedVersion: 2
-  m_Size: {x: .639999986, y: .639999986}
---- !u!114 &11406158
+  m_Size: {x: 1.18278062, y: 1.11817634}
+--- !u!114 &11415432
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
+  m_GameObject: {fileID: 131898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 746a2bfd71b1c0749b6349b68329141c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d44da2500b6c644688740e13a139bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11449714
+  seekMovement: 2
+  dustParticleSystemPrefab: {fileID: 468018, guid: ea065d87b9b08d548aa82032b74cb8aa,
+    type: 2}
+--- !u!114 &11425838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
+  m_GameObject: {fileID: 131898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581d298aabc415a43ab2da92cc533329, type: 3}
+  m_Script: {fileID: 11500000, guid: ef3292fbd55e7144d87e5ee6eee3558a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 11419130, guid: be6eeb148520b164b8583543c7f63c35, type: 2}
-  rateOfFire: .5
---- !u!212 &21298500
+  maxHeath: 2
+--- !u!212 &21209128
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190674}
+  m_GameObject: {fileID: 131898}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -109,7 +94,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a9b00578e668664b870878160b90d8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05bd4d9882bfa4f42aa914f537a175cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -119,34 +104,52 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
+      propertyPath: playerShip
+      value: 
+      objectReference: {fileID: 435670, guid: 0b9a0e6638fc723489f8363ffc8f6def, type: 2}
     - target: {fileID: 0}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalScale.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: rateOfFire
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Layer
-      value: 8
+      propertyPath: seekMovement
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dustParticleSystemPrefab
+      value: 
+      objectReference: {fileID: 468018, guid: ea065d87b9b08d548aa82032b74cb8aa, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tryAgainButton
+      value: 
+      objectReference: {fileID: 11429962, guid: 86cd7efbf0085854a80a36d71cc7a246,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: maxHeath
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05bd4d9882bfa4f42aa914f537a175cb,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.z
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.w
+      value: .707106709
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 190674}
+  m_RootGameObject: {fileID: 131898}
   m_IsPrefabParent: 1

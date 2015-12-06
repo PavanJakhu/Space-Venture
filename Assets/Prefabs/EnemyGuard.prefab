@@ -1,68 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &131898
+--- !u!1 &116128
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 421512}
-  - 212: {fileID: 21209128}
-  - 61: {fileID: 6111606}
-  - 114: {fileID: 11415432}
-  m_Layer: 0
-  m_Name: Enemy
+  - 4: {fileID: 448074}
+  - 212: {fileID: 21280956}
+  - 61: {fileID: 6172524}
+  - 114: {fileID: 11401338}
+  - 114: {fileID: 11477062}
+  - 114: {fileID: 11453306}
+  m_Layer: 11
+  m_Name: EnemyGuard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &421512
+--- !u!4 &448074
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
+  m_GameObject: {fileID: 116128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 4.32000017, y: -.629719555, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6111606
+--- !u!61 &6172524
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
+  m_GameObject: {fileID: 116128}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .00753802061, y: -.00376915932}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .577877283, y: .570339203}
---- !u!114 &11415432
+  m_Size: {x: 1.14999998, y: .829999983}
+--- !u!114 &11401338
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
+  m_GameObject: {fileID: 116128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d44da2500b6c644688740e13a139bb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 83000b52b98e1d149be6355aeb4679ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seekMovement: 2
+  movementSpeed: 1
   dustParticleSystemPrefab: {fileID: 468018, guid: ea065d87b9b08d548aa82032b74cb8aa,
     type: 2}
---- !u!212 &21209128
+--- !u!114 &11453306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8763bda8929434f4c893876ce66c460b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 11451564, guid: d45589a5630fd9a4a82c9d7e1ee78315, type: 2}
+  rateOfFire: 1
+--- !u!114 &11477062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3292fbd55e7144d87e5ee6eee3558a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHeath: 1
+--- !u!212 &21280956
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
+  m_GameObject: {fileID: 116128}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d793acd4b7a7d9849ab7463c97d5b1bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae3e12e73b22260469af10b4c67b8c79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -91,14 +118,6 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: playerShip
-      value: 
-      objectReference: {fileID: 435670, guid: 0b9a0e6638fc723489f8363ffc8f6def, type: 2}
-    - target: {fileID: 0}
-      propertyPath: seekMovement
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -107,11 +126,23 @@ Prefab:
       value: 
       objectReference: {fileID: 468018, guid: ea065d87b9b08d548aa82032b74cb8aa, type: 2}
     - target: {fileID: 0}
-      propertyPath: tryAgainButton
+      propertyPath: maxHeath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rateOfFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 11429962, guid: 86cd7efbf0085854a80a36d71cc7a246,
+      objectReference: {fileID: 11451564, guid: d45589a5630fd9a4a82c9d7e1ee78315,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 131898}
+  m_RootGameObject: {fileID: 116128}
   m_IsPrefabParent: 1

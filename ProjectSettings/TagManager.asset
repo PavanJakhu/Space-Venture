@@ -8,6 +8,7 @@ TagManager:
   - Power Up
   - Planet
   - Starfield
+  - Support Ship
   layers:
   - Default
   - TransparentFX

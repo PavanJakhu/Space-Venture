@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89312da43b633a34bbd0b1a5ef85c8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 200
+  movementSpeed: 10
   powerUpPrefab: {fileID: 443456, guid: 87b30d1c657c2d74a8a245968dab56c8, type: 2}
   explosionPrefab: {fileID: 495570, guid: fe94bfe9d5ca3564ab8dba5d74525110, type: 2}
 --- !u!1001 &100100000
@@ -115,6 +115,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: movementSpeed
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []

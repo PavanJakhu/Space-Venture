@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScoreKeeper : MonoBehaviour
+public class ScoreKeeper : NetworkBehaviour
 {
+    [SyncVar]
     private int score;
     private Text scoreText;
 
@@ -22,6 +24,11 @@ public class ScoreKeeper : MonoBehaviour
 
     public void AddScore(int addScore)
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         score += addScore;
     }
 }

@@ -116,8 +116,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 179}
-  m_SizeDelta: {x: 600, y: 180}
+  m_AnchoredPosition: {x: 0, y: 127}
+  m_SizeDelta: {x: 400, y: 122}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &21899380
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 41fc7b9fc9587e345a9d92ed08d1834a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -381,8 +381,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 420, y: 348.5}
-  m_SizeDelta: {x: 840, y: 697}
+  m_AnchoredPosition: {x: 117, y: 250.5}
+  m_SizeDelta: {x: 234, y: 501}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &271008886
 MonoBehaviour:

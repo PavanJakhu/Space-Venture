@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : NetworkBehaviour
 {
+    [SyncVar]
     public float maxHeath;
 
+    [SyncVar]
     private float m_health;
+    [SyncVar]
     private bool m_alive;
 
     void Start()
@@ -16,6 +20,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void DecreaseHealth(float amt)
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         if (m_health - amt > 0.0f)
         {
             m_health -= amt;
@@ -28,6 +37,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void IncreaseHealth(float amt)
     {
+        if (!isServer)
+        {
+            return;
+        }
+
         if (m_health + amt < maxHeath)
         {
             m_health += amt;

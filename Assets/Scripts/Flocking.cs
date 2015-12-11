@@ -118,7 +118,10 @@ public class Flocking : NetworkBehaviour
     void CmdDestroyObject(GameObject gameobject)
     {
         Destroy(gameobject);
-
-        NetworkServer.Destroy(gameobject);
+        
+        if (gameObject != null)
+        {
+            NetworkServer.Destroy(gameobject);
+        }
     }
 }

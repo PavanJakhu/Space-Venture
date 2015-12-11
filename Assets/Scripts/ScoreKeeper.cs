@@ -31,4 +31,13 @@ public class ScoreKeeper : NetworkBehaviour
 
         score += addScore;
     }
+
+    public int GetScore()
+    {
+        if (!isServer)
+        {
+            return -1;
+        }
+        return score;
+    }
 }

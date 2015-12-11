@@ -67,5 +67,7 @@ public class SpawnNewEnemies : NetworkBehaviour
         {
             spawnedShip.GetComponent<ShootFromAfar>().SetSpawnSide(sideSpawned);
         }
+
+        NetworkServer.Spawn(spawnedShip);
     }
 }

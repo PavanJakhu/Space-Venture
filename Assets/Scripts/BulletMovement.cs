@@ -23,8 +23,10 @@ public class BulletMovement : NetworkBehaviour
 
     void Update()
     {
-        //Stuff
-        bulletRigidbody.AddForce(direction * movementSpeed);
+        if (isServer)
+        {
+            bulletRigidbody.AddForce(direction * movementSpeed);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -33,12 +35,12 @@ public class BulletMovement : NetworkBehaviour
         {
             scoreKeeper.AddScore(10);
 
-            EnemyHealth healthScript = coll.gameObject.GetComponent<EnemyHealth>();
-            healthScript.DecreaseHealth(1.0f);
-            if (!healthScript.IsAlive())
+            EnemyHealth enemyHealth = coll.gameObject.GetComponent<EnemyHealth>();
+            enemyHealth.DecreaseHealth(1.0f);
+            if (!enemyHealth.IsAlive())
             {
                 CmdSpawnPowerUp();
-
+                
                 CmdSpawnExplosion();
 
                 CmdDestroyObject(coll.gameObject);
@@ -84,20 +86,20 @@ public class BulletMovement : NetworkBehaviour
     void CmdSpawnPowerUp()
     {
         int ranNum = Random.Range(1, 10);
-        if (ranNum == 1)
+        if (ranNum <= 10)
         {
-            GameObject powerup = Instantiate(powerUpPrefab, transform.position, Quaternion.identity) as GameObject;
+            Transform powerup = Instantiate(powerUpPrefab, transform.position, Quaternion.identity) as Transform;
 
-            NetworkServer.Spawn(powerup);
+            NetworkServer.Spawn(powerup.gameObject);
         }
     }
 
     [Command]
     void CmdSpawnExplosion()
     {
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
+        Transform explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as Transform;
 
-        NetworkServer.Spawn(explosion);
+        NetworkServer.Spawn(explosion.gameObject);
     }
 
     [Command]

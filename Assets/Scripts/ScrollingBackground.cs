@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ScrollingBackground : MonoBehaviour
 {
     private float bottomOfScreen;
     private float heightOfSprite;
     public float speed;
-    private GameObject[] planets;
+
     // Use this for initialization
     void Start()
     {
-        planets = GameObject.FindGameObjectsWithTag("Planet");
         bottomOfScreen = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 0.0f)).y;
         heightOfSprite = GetComponent<SpriteRenderer>().bounds.extents.y;
     }

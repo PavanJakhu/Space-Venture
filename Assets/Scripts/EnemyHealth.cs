@@ -24,7 +24,7 @@ public class EnemyHealth : NetworkBehaviour
         {
             return;
         }
-        
+
         if (m_health - amt > 0.0f)
         {
             m_health -= amt;

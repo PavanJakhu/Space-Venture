@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 473284}
   - 198: {fileID: 19813226}
   - 199: {fileID: 19913846}
-  - 114: {fileID: 11456566}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -62,7 +61,6 @@ GameObject:
   - 4: {fileID: 402046}
   - 198: {fileID: 19830632}
   - 199: {fileID: 19987684}
-  - 114: {fileID: 11452266}
   m_Layer: 0
   m_Name: Shower
   m_TagString: Untagged
@@ -80,7 +78,6 @@ GameObject:
   - 4: {fileID: 484246}
   - 198: {fileID: 19839758}
   - 199: {fileID: 19986926}
-  - 114: {fileID: 11443558}
   m_Layer: 0
   m_Name: TrailsWhite
   m_TagString: Untagged
@@ -98,7 +95,6 @@ GameObject:
   - 4: {fileID: 415072}
   - 198: {fileID: 19811352}
   - 199: {fileID: 19951772}
-  - 114: {fileID: 11428714}
   m_Layer: 0
   m_Name: Dust
   m_TagString: Untagged
@@ -116,7 +112,6 @@ GameObject:
   - 4: {fileID: 412474}
   - 198: {fileID: 19888718}
   - 199: {fileID: 19910074}
-  - 114: {fileID: 11473740}
   m_Layer: 0
   m_Name: SmokeBlack
   m_TagString: Untagged
@@ -152,7 +147,6 @@ GameObject:
   - 4: {fileID: 485628}
   - 198: {fileID: 19846604}
   - 199: {fileID: 19965284}
-  - 114: {fileID: 11433378}
   m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
@@ -170,7 +164,6 @@ GameObject:
   - 4: {fileID: 493618}
   - 198: {fileID: 19883404}
   - 199: {fileID: 19942846}
-  - 114: {fileID: 11471778}
   m_Layer: 0
   m_Name: TrailsBlack
   m_TagString: Untagged
@@ -319,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 1
+  m_SendInterval: .100000001
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -370,230 +363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983efef34de5a2e43a9fbe43120ee38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11428714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11433378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11443558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11452266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11456566
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11471778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11473740
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 254
-    i1: 148
-    i2: 191
-    i3: 233
-    i4: 213
-    i5: 202
-    i6: 53
-    i7: 100
-    i8: 171
-    i9: 141
-    i10: 186
-    i11: 93
-    i12: 116
-    i13: 82
-    i14: 81
-    i15: 16
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!198 &19811352
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -9970,10 +9739,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: multiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SendInterval
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

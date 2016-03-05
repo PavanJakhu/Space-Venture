@@ -17,13 +17,13 @@ public class ShootBullet : NetworkBehaviour
 
     void Update()
     {
-        if (isLocalPlayer)
+        if (!isLocalPlayer)
         {
             return;
         }
 
         elapsedTime += Time.deltaTime;
-        
+
         if (CrossPlatformInputManager.GetButton("Fire1"))
         {
             if (elapsedTime >= rateOfFire)

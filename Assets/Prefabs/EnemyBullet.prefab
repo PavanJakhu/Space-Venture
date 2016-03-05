@@ -15,7 +15,6 @@ GameObject:
   - 114: {fileID: 11451564}
   - 114: {fileID: 11421024}
   - 114: {fileID: 11483378}
-  - 114: {fileID: 11495494}
   m_Layer: 10
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -161,20 +160,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &11495494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c62aebf773a03498c6ad462f57323e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: ba13ba562ad09b948884f85757990a87, type: 3}
-  playOnAwake: 1
-  volume: .300000012
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -193,22 +178,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SendInterval
       value: .0333333351
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba13ba562ad09b948884f85757990a87, type: 3}
-    - target: {fileID: 0}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba13ba562ad09b948884f85757990a87, type: 3}
-    - target: {fileID: 0}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: volume
-      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

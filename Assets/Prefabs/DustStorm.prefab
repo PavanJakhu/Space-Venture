@@ -12,7 +12,6 @@ GameObject:
   - 199: {fileID: 19951202}
   - 114: {fileID: 11474466}
   - 114: {fileID: 11474672}
-  - 114: {fileID: 11451868}
   m_Layer: 0
   m_Name: DustStorm
   m_TagString: Untagged
@@ -32,20 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11451868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c62aebf773a03498c6ad462f57323e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b212be3a9130214419fa7fc0844d19b3, type: 3}
-  playOnAwake: 1
-  volume: 1
 --- !u!114 &11474466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1182,18 +1167,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SendInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b212be3a9130214419fa7fc0844d19b3, type: 3}
-    - target: {fileID: 0}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: volume
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

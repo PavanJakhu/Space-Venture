@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class ShootBullet : NetworkBehaviour
+public class ShootBullet : MonoBehaviour
 {
     public BulletMovement bulletPrefab;
     public float rateOfFire;
@@ -17,11 +16,6 @@ public class ShootBullet : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-
         elapsedTime += Time.deltaTime;
 
         if (CrossPlatformInputManager.GetButton("Fire1"))

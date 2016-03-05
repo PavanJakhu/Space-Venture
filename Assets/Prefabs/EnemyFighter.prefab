@@ -12,8 +12,6 @@ GameObject:
   - 61: {fileID: 6111606}
   - 114: {fileID: 11415432}
   - 114: {fileID: 11425838}
-  - 114: {fileID: 11435604}
-  - 114: {fileID: 11416434}
   m_Layer: 11
   m_Name: EnemyFighter
   m_TagString: Enemy
@@ -60,26 +58,6 @@ MonoBehaviour:
   seekMovement: 2
   dustParticleSystemPrefab: {fileID: 468018, guid: ea065d87b9b08d548aa82032b74cb8aa,
     type: 2}
---- !u!114 &11416434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: .100000001
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: .00100000005
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &11425838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,38 +70,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 2
---- !u!114 &11435604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 10
-    i1: 211
-    i2: 255
-    i3: 219
-    i4: 106
-    i5: 91
-    i6: 220
-    i7: 20
-    i8: 106
-    i9: 89
-    i10: 89
-    i11: 31
-    i12: 151
-    i13: 19
-    i14: 65
-    i15: 184
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!212 &21209128
 SpriteRenderer:
   m_ObjectHideFlags: 1

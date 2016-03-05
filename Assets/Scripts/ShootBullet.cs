@@ -28,19 +28,10 @@ public class ShootBullet : NetworkBehaviour
         {
             if (elapsedTime >= rateOfFire)
             {
-                CmdSpawnBullet();
-
+                GameObject bullet = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity) as GameObject;
+                bullet.GetComponent<BulletMovement>().SetTarget(CrossPlatformInputManager.mousePosition);
                 elapsedTime = 0.0f;
             }
         }
-    }
-
-    [Command]
-    void CmdSpawnBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity) as GameObject;
-        bullet.GetComponent<BulletMovement>().SetTarget(CrossPlatformInputManager.mousePosition);
-
-        NetworkServer.Spawn(bullet);
     }
 }

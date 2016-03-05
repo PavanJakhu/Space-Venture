@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 
-public class ShootFromAfar : NetworkBehaviour
+public class ShootFromAfar : MonoBehaviour
 {
     public float movementSpeed;
     public Transform dustParticleSystemPrefab;
@@ -40,10 +39,10 @@ public class ShootFromAfar : NetworkBehaviour
             var ships = coll.gameObject.GetComponent<Flocking>().GetSupportShips();
             for (int s = 0; s < ships.Count; s++)
             {
-                CmdDestroyObject(ships[s].gameObject);
+                Destroy(ships[s].gameObject);
             }
-            CmdSpawnDust();
-            CmdDestroyObject(coll.gameObject);
+            Instantiate(dustParticleSystemPrefab, transform.position, Quaternion.identity);
+            Destroy(coll.gameObject);
 
             tryAgainButton.SetTryAgainButtonActive(true);
         }
@@ -71,21 +70,5 @@ public class ShootFromAfar : NetworkBehaviour
             default:
                 break;
         }
-    }
-
-    [Command]
-    void CmdSpawnDust()
-    {
-        GameObject dust = Instantiate(dustParticleSystemPrefab, transform.position, Quaternion.identity) as GameObject;
-
-        NetworkServer.Spawn(dust);
-    }
-
-    [Command]
-    void CmdDestroyObject(GameObject coll)
-    {
-        Destroy(coll);
-
-        NetworkServer.Destroy(coll);
     }
 }

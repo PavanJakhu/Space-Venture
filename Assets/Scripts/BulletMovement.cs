@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class BulletMovement : NetworkBehaviour
+public class BulletMovement : MonoBehaviour
 {
     public float movementSpeed;
     public Transform powerUpPrefab;
@@ -23,7 +22,6 @@ public class BulletMovement : NetworkBehaviour
 
     void Update()
     {
-        //Stuff
         bulletRigidbody.AddForce(direction * movementSpeed);
     }
 
@@ -37,14 +35,18 @@ public class BulletMovement : NetworkBehaviour
             healthScript.DecreaseHealth(1.0f);
             if (!healthScript.IsAlive())
             {
-                CmdSpawnPowerUp();
+                int ranNum = Random.Range(1, 10);
+                if (ranNum == 1)
+                {
+                    Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+                }
 
-                CmdSpawnExplosion();
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
-                CmdDestroyObject(coll.gameObject);
+                Destroy(coll.gameObject);
             }
-
-            CmdDestroyObject(gameObject);
+            
+            Destroy(gameObject);
         }
         else if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Support Ship")
         {
@@ -53,21 +55,21 @@ public class BulletMovement : NetworkBehaviour
                 var ships = coll.gameObject.GetComponent<Flocking>().GetSupportShips();
                 for (int s = 0; s < ships.Count; s++)
                 {
-                    CmdDestroyObject(ships[s].gameObject);
+                    Destroy(ships[s].gameObject);
                 }
             }
             else if (coll.gameObject.tag == "Support Ship")
             {
                 playerShip.GetComponent<Flocking>().RemoveShip(coll.gameObject.transform);
             }
-            CmdDestroyObject(coll.gameObject);
-            CmdDestroyObject(gameObject);
+            Destroy(coll.gameObject);
+            Destroy(gameObject);
         }
     }
 
     void OnBecameInvisible()
     {
-        CmdDestroyObject(gameObject);
+        Destroy(gameObject);
     }
 
     public void SetTarget(Vector2 target)
@@ -78,33 +80,5 @@ public class BulletMovement : NetworkBehaviour
 
         float angle = Mathf.Atan2(endPosition.y - startPosition.y, endPosition.x - startPosition.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90.0f));
-    }
-
-    [Command]
-    void CmdSpawnPowerUp()
-    {
-        int ranNum = Random.Range(1, 10);
-        if (ranNum == 1)
-        {
-            GameObject powerup = Instantiate(powerUpPrefab, transform.position, Quaternion.identity) as GameObject;
-
-            NetworkServer.Spawn(powerup);
-        }
-    }
-
-    [Command]
-    void CmdSpawnExplosion()
-    {
-        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as GameObject;
-
-        NetworkServer.Spawn(explosion);
-    }
-
-    [Command]
-    void CmdDestroyObject(GameObject coll)
-    {
-        Destroy(coll);
-
-        NetworkServer.Destroy(coll);
     }
 }

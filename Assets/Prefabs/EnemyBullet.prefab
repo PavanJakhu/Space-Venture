@@ -13,8 +13,6 @@ GameObject:
   - 61: {fileID: 6139758}
   - 50: {fileID: 5080290}
   - 114: {fileID: 11451564}
-  - 114: {fileID: 11421024}
-  - 114: {fileID: 11483378}
   m_Layer: 10
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -94,38 +92,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &11421024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 212
-    i1: 85
-    i2: 137
-    i3: 165
-    i4: 99
-    i5: 15
-    i6: 217
-    i7: 164
-    i8: 168
-    i9: 44
-    i10: 157
-    i11: 126
-    i12: 30
-    i13: 231
-    i14: 131
-    i15: 21
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &11451564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,26 +106,6 @@ MonoBehaviour:
   movementSpeed: 10
   powerUpPrefab: {fileID: 443456, guid: 87b30d1c657c2d74a8a245968dab56c8, type: 2}
   explosionPrefab: {fileID: 495570, guid: fe94bfe9d5ca3564ab8dba5d74525110, type: 2}
---- !u!114 &11483378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: .0333333351
-  m_SyncRotationAxis: 3
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: .00100000005
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -174,10 +120,6 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: movementSpeed
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SendInterval
-      value: .0333333351
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

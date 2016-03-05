@@ -10,8 +10,6 @@ GameObject:
   - 4: {fileID: 468018}
   - 198: {fileID: 19842254}
   - 199: {fileID: 19951202}
-  - 114: {fileID: 11474466}
-  - 114: {fileID: 11474672}
   m_Layer: 0
   m_Name: DustStorm
   m_TagString: Untagged
@@ -31,58 +29,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11474466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 234
-    i1: 6
-    i2: 93
-    i3: 135
-    i4: 185
-    i5: 176
-    i6: 141
-    i7: 84
-    i8: 138
-    i9: 168
-    i10: 32
-    i11: 50
-    i12: 183
-    i13: 76
-    i14: 184
-    i15: 170
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &11474672
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: .100000001
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: .00100000005
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!198 &19842254
 ParticleSystem:
   m_ObjectHideFlags: 1

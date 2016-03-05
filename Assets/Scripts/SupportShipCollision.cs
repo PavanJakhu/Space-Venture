@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SupportShipCollision : NetworkBehaviour
+public class SupportShipCollision : MonoBehaviour
 {
     private Flocking mainShip;
 
@@ -16,17 +15,9 @@ public class SupportShipCollision : NetworkBehaviour
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            CmdDestroyObject(coll.gameObject);
+            Destroy(coll.gameObject);
             mainShip.RemoveShip(transform);
-            CmdDestroyObject(gameObject);
+            Destroy(gameObject);
         }
-    }
-
-    [Command]
-    void CmdDestroyObject(GameObject coll)
-    {
-        Destroy(coll);
-
-        NetworkServer.Destroy(coll);
     }
 }

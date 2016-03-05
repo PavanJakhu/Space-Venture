@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 
-public class EnemyShootBullet : NetworkBehaviour
+public class EnemyShootBullet : MonoBehaviour
 {
     public BulletMovement bulletPrefab;
     public float rateOfFire;
@@ -21,27 +20,13 @@ public class EnemyShootBullet : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-
         elapsedTime += Time.deltaTime;
 
         if (playerShip && elapsedTime >= rateOfFire)
         {
-            CmdSpawnBullet();
-
+            GameObject bullet = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<BulletMovement>().SetTarget(Camera.main.WorldToScreenPoint(playerShip.transform.position));
             elapsedTime = 0.0f;
         }
-    }
-
-    [Command]
-    void CmdSpawnBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity) as GameObject;
-        bullet.GetComponent<BulletMovement>().SetTarget(Camera.main.WorldToScreenPoint(playerShip.transform.position));
-
-        NetworkServer.Spawn(bullet);
     }
 }

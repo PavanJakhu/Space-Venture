@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Flocking : NetworkBehaviour
+public class Flocking : MonoBehaviour
 {
     public Transform supportShipPrefab;
-    [SyncVar]
     public int numberOfSupportShips;
     public int maxNumberOfSupportShips;
     public int distanceFromShip;
@@ -21,22 +19,18 @@ public class Flocking : NetworkBehaviour
     {
         scoreKeeper = GameObject.Find("Score Text").GetComponent<ScoreKeeper>();
 
-        if (!isServer)
+        anglePerShip = 360.0f / numberOfSupportShips;
+        for (int i = 0; i < numberOfSupportShips; i++)
         {
-            return;
+            Transform ship = Instantiate(supportShipPrefab) as Transform;
+            //ship.parent = transform;
+            supportShips.Add(ship);
         }
-
-        CmdSpawnInitSupportShips();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-
         Vector2 startPosition = transform.position;
         Vector2 endPosition = Camera.main.ScreenToWorldPoint(CrossPlatformInputManager.mousePosition);
         float angle = 0.0f;
@@ -56,18 +50,16 @@ public class Flocking : NetworkBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isServer)
-        {
-            return;
-        }
-
         if (other.gameObject.tag == "Power Up")
         {
             if (supportShips.Count < maxNumberOfSupportShips)
             {
-                CmdSpawnPowerUpSupportShips();
+                Transform ship = Instantiate(supportShipPrefab) as Transform;
+                numberOfSupportShips++;
+                anglePerShip = 360.0f / numberOfSupportShips;
+                supportShips.Add(ship);
             }
-            CmdDestroyObject(other.gameObject);
+            Destroy(other.gameObject);
             scoreKeeper.AddScore(5);
         }
     }
@@ -79,46 +71,8 @@ public class Flocking : NetworkBehaviour
     
     public void RemoveShip(Transform removedShip)
     {
-        if (!isServer)
-        {
-            return;
-        }
-
         numberOfSupportShips--;
         anglePerShip = 360.0f / numberOfSupportShips;
         supportShips.Remove(removedShip);
-    }
-
-    [Command]
-    void CmdSpawnInitSupportShips()
-    {
-        anglePerShip = 360.0f / numberOfSupportShips;
-        for (int i = 0; i < numberOfSupportShips; i++)
-        {
-            Transform ship = Instantiate(supportShipPrefab) as Transform;
-            //ship.parent = transform;
-            supportShips.Add(ship);
-
-            NetworkServer.Spawn(ship.gameObject);
-        }
-    }
-
-    [Command]
-    void CmdSpawnPowerUpSupportShips()
-    {
-        Transform ship = Instantiate(supportShipPrefab) as Transform;
-        numberOfSupportShips++;
-        anglePerShip = 360.0f / numberOfSupportShips;
-        supportShips.Add(ship);
-
-        NetworkServer.Spawn(ship.gameObject);
-    }
-
-    [Command]
-    void CmdDestroyObject(GameObject gameobject)
-    {
-        Destroy(gameobject);
-
-        NetworkServer.Destroy(gameobject);
     }
 }

@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Collections;
 
-public class SeekPlayerShip : NetworkBehaviour
+public class SeekPlayerShip : MonoBehaviour
 {
     public float seekMovement;
     public Transform dustParticleSystemPrefab;
@@ -36,28 +35,12 @@ public class SeekPlayerShip : NetworkBehaviour
             var ships = coll.gameObject.GetComponent<Flocking>().GetSupportShips();
             for (int s = 0; s < ships.Count; s++)
             {
-                CmdDestroyObject(ships[s].gameObject);
+                Destroy(ships[s].gameObject);
             }
-            CmdSpawnDust();
-            CmdDestroyObject(coll.gameObject);
+            Instantiate(dustParticleSystemPrefab, transform.position, Quaternion.identity);
+            Destroy(coll.gameObject);
 
             tryAgainButton.SetTryAgainButtonActive(true);
         }
-    }
-
-    [Command]
-    void CmdSpawnDust()
-    {
-        GameObject dust = Instantiate(dustParticleSystemPrefab, transform.position, Quaternion.identity) as GameObject;
-
-        NetworkServer.Spawn(dust);
-    }
-
-    [Command]
-    void CmdDestroyObject(GameObject coll)
-    {
-        Destroy(coll);
-
-        NetworkServer.Destroy(coll);
     }
 }

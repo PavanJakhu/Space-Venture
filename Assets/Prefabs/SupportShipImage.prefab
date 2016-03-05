@@ -10,7 +10,6 @@ GameObject:
   - 224: {fileID: 22465210}
   - 222: {fileID: 22288770}
   - 114: {fileID: 11444364}
-  - 114: {fileID: 11432066}
   m_Layer: 5
   m_Name: SupportShipImage
   m_TagString: Untagged
@@ -18,38 +17,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11432066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 171494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 24
-    i1: 236
-    i2: 5
-    i3: 95
-    i4: 212
-    i5: 254
-    i6: 112
-    i7: 148
-    i8: 218
-    i9: 130
-    i10: 189
-    i11: 8
-    i12: 142
-    i13: 169
-    i14: 189
-    i15: 231
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &11444364
 MonoBehaviour:
   m_ObjectHideFlags: 1
